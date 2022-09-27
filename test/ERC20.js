@@ -33,8 +33,8 @@ const { ethers } = require('hardhat');
   
     it('Testing balanceof', async () => {
         const [signer] = await ethers.getSigners();
-       let bal = ERC20.balanceOf(signer.address);
-       console.log(bal);
+       // await expect (ERC20.balanceOf(signer.address)).to.equal(0);
+        await 
     })
 
 })

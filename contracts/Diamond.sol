@@ -14,7 +14,7 @@ import {Appstorage} from "./libraries/Appstorage.sol";
 
 contract Diamond {    
     Appstorage internal s;
-    constructor(address _contractOwner, address _diamondCutFacet, string memory _ERC20name,string memory _ERC20symbol, string memory _ERC721name, string memory _ERC721symbol) payable {        
+    constructor(address _contractOwner, address _diamondCutFacet) payable {        
         LibDiamond.setContractOwner(_contractOwner);
 
         // Add the diamondCut external function from the diamondCutFacet
@@ -26,11 +26,7 @@ contract Diamond {
             action: IDiamondCut.FacetCutAction.Add, 
             functionSelectors: functionSelectors
         });
-        LibDiamond.diamondCut(cut, address(0), ""); 
-        s.ERC20name = _ERC20name;
-        s.ERC20symbol =  _ERC20symbol; 
-        s.ERC721name = _ERC721name ;
-        s.ERC721symbol = _ERC721symbol;    
+        LibDiamond.diamondCut(cut, address(0), "");   
     }
 
     // Find facet for function that is called and execute the

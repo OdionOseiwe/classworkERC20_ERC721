@@ -18,12 +18,12 @@ contract ERC20 is IERC20{
     //     _symbol = symbol_;
     // }
 
-    function name() public view    returns (string memory) {
-        return s.ERC20name;
+    function name() public     returns (string memory) {
+        return s.ERC20name = "Na";
     }
 
-    function symbol() public view   returns (string memory) {
-        return s.ERC20symbol;
+    function symbol() public    returns (string memory) {
+        return s.ERC20symbol = "N";
     }
 
     function decimals() public view    returns (uint8) {
